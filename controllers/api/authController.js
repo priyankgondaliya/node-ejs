@@ -63,7 +63,6 @@ exports.login = async (req, res, next) => {
   try {
     const { phone, otp } = req.body;
 
-    // verify otp
     const otpVerified = await OTP.findOne({ phone, otp });
     if (!otpVerified)
       return next(createError.BadRequest("Fail to verify OTP."));
