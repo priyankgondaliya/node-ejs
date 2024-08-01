@@ -6,7 +6,7 @@ console.log(client, "client");
 const sendOtp = async function (to, otp) {
   return client.messages.create({
     body: `Your OTP is ${otp}. OTP is valid for 5 minutes.`,
-    from: +15753080052,
+    from: process.env.TWILIO_NUMBER,
     to,
   });
 };
