@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === "development") {
 // session
 app.use(
   require("cookie-session")({
-    secret: `ortrgrgrrgdgddddfdevgdgvdvdvdvdvdvv`,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
